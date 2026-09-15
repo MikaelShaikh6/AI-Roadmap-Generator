@@ -5,8 +5,12 @@ import sqlite3
 import os
 import json
 from google import genai
+from dotenv import load_dotenv
 
-client = genai.Client(api_key="AIzaSyCDPdZQDp7JyPCYq5QQdR0rJiO1jpkopRQ")
+load_dotenv()
+gemini_key = os.getenv("GEMINI_API_KEY")
+
+client = genai.Client(api_key=gemini_key)
 
 
 
